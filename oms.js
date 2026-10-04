@@ -1,16 +1,16 @@
 (function () {
   'use strict';
 
-  // ---- PDF.js setup (used to render PDF first-page thumbnails) ----
+  
   if (window.pdfjsLib) {
     pdfjsLib.GlobalWorkerOptions.workerSrc =
       "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
   }
 
-  // ---- Profile photo ----
+  // Profile photo 
   const PROFILE_PHOTO = "profile.jpg";
 
-  // ---- Quiz items ----
+  // Quiz items 
   const QUIZ_ITEMS = [
     {
       title: "Quiz 1",
@@ -33,33 +33,32 @@
     
   ];
 
-  // ---- Activity items ----
-  // "subtitle" is optional — shown as a second line under the title
-  // (e.g. the topic of the module), replacing the old "1 PDF" label.
+  // Activity items
+  
   const ACTIVITY_ITEMS = [
     {
       title: "ACTIVITY 1",
       subtitle: "Emerging Technology",
       images: [
-        "Delfin - Module1Activity.pdf"
+        "activity 1.pdf"
       ]
     },
     {
       title: "ACTIVITY 2",
       subtitle: "Requirements Determination and Gathering Techniques",
       images: [
-        "Delfin -  Activity 2.pdf"
+        "activity 2.pdf"
       ]
     }
   ];
 
-  // ---- Exam items ----
+  // Exam items
   const EXAM_ITEMS = [];
 
   const DATA = { quiz: QUIZ_ITEMS, activity: ACTIVITY_ITEMS, exam: EXAM_ITEMS };
   const sections = ['quiz', 'activity', 'exam'];
 
-  /* ---------------- NAVIGATION ---------------- */
+  /* NAVIGATION */
   const navButtons = document.querySelectorAll('nav.nav-links button');
   const pages = document.querySelectorAll('.page');
   const navLinks = document.getElementById('navLinks');
@@ -97,7 +96,7 @@
     });
   }
 
-  /* ---------------- AVATAR ---------------- */
+  /* AVATAR*/
   const avatarFrame = document.getElementById('avatarFrame');
   function renderAvatar() {
     if (!avatarFrame) return;
@@ -108,19 +107,19 @@
     }
   }
 
-  /* ---------------- ESCAPE HELPER ---------------- */
+  
   function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
   }
 
-  /* ---------------- FILE TYPE HELPER ---------------- */
+  /* FILE TYPE */
   function isPDF(path) {
     return typeof path === 'string' && path.toLowerCase().endsWith('.pdf');
   }
 
-  /* ---------------- PDF THUMBNAIL RENDERING ---------------- */
+  /* PDF THUMBNAIL RENDERING */
   async function renderPdfThumbnail(path) {
     if (!window.pdfjsLib) return null;
     try {
@@ -163,7 +162,7 @@
     });
   }
 
-  /* ---------------- RENDER GALLERIES ---------------- */
+  /*  RENDER GALLERIES */
   function renderGallery(section) {
     const container = document.getElementById('gallery-' + section);
     if (!container) return;
@@ -190,8 +189,7 @@
 
       const badge = count > 1 ? `<div class="image-count-badge">${count} files</div>` : '';
 
-      // Prefer Score/Date (quiz-style items). If neither is set, fall
-      // back to the item's subtitle. No more "1 PDF" / "1 photo" text.
+      
       const metaParts = [];
       if (item.score) metaParts.push('Score: ' + item.score);
       if (item.date) metaParts.push(item.date);
@@ -224,7 +222,7 @@
     });
   });
 
-  /* ---------------- MODAL LOGIC ---------------- */
+  /*  MODAL LOGIC */
   const modalOverlay = document.getElementById('modalOverlay');
   const modalContent = document.querySelector('.modal-content');
   const modalImage = document.getElementById('modalImage');
@@ -261,8 +259,7 @@
       if (modalPdfFrame) { modalPdfFrame.style.display = 'none'; modalPdfFrame.src = ''; }
     }
 
-    // Make the popup fill the whole screen while viewing a PDF; normal
-    // size for images.
+    
     if (modalOverlay) modalOverlay.classList.toggle('pdf-open', showingPdf);
     if (modalContent) modalContent.classList.toggle('pdf-mode', showingPdf);
 
@@ -314,7 +311,7 @@
     currentModal = null;
   }
 
-  /* ---------------- EVENT LISTENERS ---------------- */
+  
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
   if (modalPrevBtn) modalPrevBtn.addEventListener('click', showPrev);
   if (modalNextBtn) modalNextBtn.addEventListener('click', showNext);
@@ -332,7 +329,7 @@
     if (e.key === 'ArrowRight') showNext(e);
   });
 
-  /* ---------------- INIT ---------------- */
+  
   renderAvatar();
   sections.forEach(renderGallery);
 })();

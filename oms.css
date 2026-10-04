@@ -170,7 +170,7 @@ main {
 
 .card:hover { border-color: var(--accent); }
 
-/* ===== HOME PAGE ===== */
+/*HOME PAGE */
 .home-grid {
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -232,7 +232,7 @@ main {
 
 .bio-section p { color: var(--text-dim); line-height: 1.65; font-size: 0.96rem; }
 
-/* ===== GALLERY (Quiz/Activity/Exam) — VIEW ONLY ===== */
+/*  GALLERY (Quiz/Activity/Exam) — VIEW ONLY */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -306,7 +306,7 @@ main {
   border-radius: 20px;
 }
 
-/* ===== MODAL (image + PDF preview with prev/next) ===== */
+
 .modal-overlay {
   display: none;
   position: fixed;
@@ -319,7 +319,7 @@ main {
 }
 .modal-overlay.active { display: flex; }
 
-/* When a PDF is open, let the overlay go edge-to-edge */
+
 .modal-overlay.pdf-open {
   padding: 0;
 }
@@ -336,7 +336,7 @@ main {
   position: relative;
 }
 
-/* Fullscreen layout used only while viewing a PDF */
+/* Fullscreen layout */
 .modal-content.pdf-mode {
   width: 100vw;
   height: 100vh;
@@ -438,7 +438,7 @@ main {
   margin-top: 4px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 780px) {
   .home-grid { grid-template-columns: 1fr; }
   nav.nav-links {
