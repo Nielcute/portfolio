@@ -29,7 +29,26 @@
         "quiz 2.jpg"
         
       ]
+    } ,
+    {
+      title: "Quiz 3",
+      score: "20/20",
+      date: "October 05, 2026",
+      images: [
+        "quiz 3.jpg"
+        
+      ]
+    },
+    {
+      title: "Long Quiz",
+      score: "45/45",
+      date: "October 09, 2026",
+      images: [
+        "longquiz.jpg"
+        
+      ]
     }
+
     
   ];
 
@@ -53,7 +72,17 @@
   ];
 
   // Exam items
-  const EXAM_ITEMS = [];
+  const EXAM_ITEMS = [
+     {
+      title: "MIDTERM EXAM",
+      score: "64/70",
+      date: "October 06, 2026",
+      images: [
+        "Midterm.jpg"
+        
+      ]
+    }
+  ];
 
   const DATA = { quiz: QUIZ_ITEMS, activity: ACTIVITY_ITEMS, exam: EXAM_ITEMS };
   const sections = ['quiz', 'activity', 'exam'];
