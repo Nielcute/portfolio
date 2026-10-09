@@ -59,14 +59,14 @@
       title: "ACTIVITY 1",
       subtitle: "Emerging Technology",
       images: [
-        "activity 1.pdf"
+        "module1.pdf"
       ]
     },
     {
       title: "ACTIVITY 2",
       subtitle: "Requirements Determination and Gathering Techniques",
       images: [
-        "activity 2.pdf"
+        "module2.pdf"
       ]
     }
   ];
@@ -360,7 +360,7 @@
     if (e.key === 'ArrowRight') showNext(e);
   });
 
-  /* ---------------- INIT ---------------- */
+  /* INIT  */
   renderAvatar();
   sections.forEach(renderGallery);
 })();
