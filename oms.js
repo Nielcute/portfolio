@@ -26,7 +26,7 @@
       score: "20/20",
       date: "October 04, 2026",
       images: [
-        "quiz 2.jpg"
+        "Quiz 2.jpg"
         
       ]
     } ,
@@ -35,7 +35,7 @@
       score: "20/20",
       date: "October 05, 2026",
       images: [
-        "quiz 3.jpg"
+        "Quiz 3.jpg"
         
       ]
     },
@@ -44,7 +44,7 @@
       score: "45/45",
       date: "October 09, 2026",
       images: [
-        "longquiz.jpg"
+        "long quiz.jpg"
         
       ]
     }
