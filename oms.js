@@ -59,14 +59,14 @@
       title: "ACTIVITY 1",
       subtitle: "Emerging Technology",
       images: [
-        "Delfin - Module1Activity.pdf"
+        "activity 1.pdf"
       ]
     },
     {
       title: "ACTIVITY 2",
       subtitle: "Requirements Determination and Gathering Techniques",
       images: [
-        "Delfin -  Activity 2.pdf"
+        "activity 2.pdf"
       ]
     }
   ];
